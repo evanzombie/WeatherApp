@@ -2,7 +2,10 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 const Card = props => (
-	<div className={`cityCard ${props.cols} ${props.color}`}>
+	<a
+		href={`/details/${props.city.toLowerCase().replace(/\s+/g, "")}`}
+		className={`cityCard ${props.cols} ${props.color}`}
+	>
 		<span className={`iconSize ${props.icon}`} />
 
 		<div className="temp">{props.temp} &#8457;</div>
@@ -22,7 +25,7 @@ const Card = props => (
 
 			<div>{props.country}</div>
 		</div>
-	</div>
+	</a>
 );
 
 export default Card;

@@ -5,11 +5,11 @@ import Card from "./Card";
 
 // Info from weather API
 // const apiKey = "185be8b935f0b6a165216ace7b3d09da";
+// new york:5128638
 // London:2643743
 // Berlin: 2950159
 // Beijing:1816670
 // mexico city: 3530597
-// new york:5128638
 
 class Landing extends Component {
 	constructor(props) {
@@ -41,7 +41,7 @@ class Landing extends Component {
 	iconPicker(weather) {
 		let iconPicked = "";
 
-		if (weather.description.includes("cloud")) {
+		if (weather.description.includes("cloud") || weather.description.includes("fog")) {
 			return (iconPicked = "flaticon-cloud");
 		} else if (weather.description.includes("thunderstorm")) {
 			return (iconPicked = "flaticon-storm");

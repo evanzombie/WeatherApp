@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Today from "./Today";
 //  import styled from "styled-components";
 
 // const LongPageWrapper = styled.div`
@@ -12,7 +13,8 @@ export default class Detail extends Component {
 		super(props);
 
 		this.state = {
-			toolBarClass: "toolBar"
+			toolBarClass: "toolBar",
+			currentCity: this.props.city
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -41,6 +43,9 @@ export default class Detail extends Component {
 		// }
 	}
 	render() {
+		// const currentCity = this.state.currentCity;
+		// switch(currentCity)
+
 		// const { title, description, year, poster, trailer } = this.props.show;
 		// let ratingComponent;
 		// if (this.state.apiData.rating) {
@@ -48,10 +53,17 @@ export default class Detail extends Component {
 		// } else {
 		// 	ratingComponent = <Spinner />;
 		// }
+		// {<pre>
+		// 					<code>{JSON.stringify(this.props, null, 4)}</code>
+		// 				</pre>  }
 		return (
 			<div className="detail">
-				<div className="testBK">
-					<div className="cityName">Seattle, Washington</div>
+				<Today temp={this.props.temp} city={this.props.city[0].toUpperCase()} />
+				{/*	<div className="testBK">
+					<div className="cityName">
+						{this.props.city[0].toUpperCase()}
+						{this.props.city.slice(1)}
+					</div>
 					<div className="dateTime">10:24 AM</div>
 					<hr />
 					<div className="flex mainFlex">
@@ -79,7 +91,7 @@ export default class Detail extends Component {
 							<div className="visibility">visibility: 1</div>
 						</div>
 					</div>
-				</div>
+				</div>*/}
 			</div>
 		);
 	}
