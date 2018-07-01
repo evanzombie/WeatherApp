@@ -83,7 +83,21 @@ hr {
 	border-color: white;
 	border-width: 0.5px;
 }
-
+ul {
+	padding-top: 30%;
+}
+li {
+	list-style: none;
+	font-size: 20px;
+	font-weight: lighter;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+li:hover {
+	text-decoration: underline;
+}
+li:nth-child(n + 2) {
+}
 /*Custom CSS Class */
 
 .appStyle,
@@ -261,7 +275,7 @@ hr {
 }
 .leftCol-2 {
 	display: inline-block;
-	margin-left: 40px;
+	/*margin-left: 40px;*/
 }
 .rightCol {
 	font-size: 1.3em;
@@ -277,9 +291,10 @@ hr {
 	width: 30%;
 }
 .mainTemp {
-	font-size: 8em;
+	font-size: 7em;
 	display: inline-block;
 	font-weight: lighter;
+	margin-right: 40px;
 }
 .mainWeather {
 	font-size: 4em;
@@ -287,18 +302,119 @@ hr {
 .mainTempDiff div {
 	font-size: 1.1em;
 }
+
 .sunnyClass {
-	width: 100%;
-	height: 100%;
-	padding: 8%;
+	width: 90%;
+	/*height: 100%;*/
+	padding: 5%;
 	color: white;
-	background: #f46b45; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to top, #eea849, #f46b45); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to top,
-		#eea849,
-		#f46b45
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	/*background: #f46b45;
+	background: -webkit-linear-gradient(to top, #eea849, #f46b45);
+	background: linear-gradient(to top, #eea849, #f46b45);*/
+}
+.todayCard {
+	margin-bottom: 100px;
+}
+.detail {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.detailCard {
+	border: 1px white solid;
+	padding: 20px;
+	width: fit-content;
+	border-radius: 10px;
+}
+.dateTime {
+	font-size: 1.3em;
+}
+.forecast {
+	display: flex;
+	flex-wrap: wrap;
+}
+.forecast div {
+	margin: 10px;
+}
+.forecastDate {
+	font-size: 2em;
+}
+
+/*MENU*/
+.menuBtn {
+	position: absolute;
+	margin: 20px;
+	left: 20px;
+	top: 20px;
+	cursor: pointer;
+	width: fit-content;
+	z-index: 3;
+}
+.bar1,
+.bar2,
+.bar3 {
+	width: 20px;
+	height: 3px;
+	background-color: #f3f3f3;
+	margin: 6px 0;
+	transition: 0.4s;
+}
+
+.change .bar1 {
+	-webkit-transform: rotate(-45deg) translate(-6px, 6px);
+	transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.change .bar2 {
+	opacity: 0;
+}
+
+.change .bar3 {
+	-webkit-transform: rotate(45deg) translate(-8px, -8px);
+	transform: rotate(45deg) translate(-7px, -7px);
+}
+
+.toolBar {
+	width: 300px;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: -300px;
+	transition: 1s;
+	display: block;
+}
+
+.toolBarShow {
+	width: 300px;
+	height: 100%;
+	background: #31363c;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	display: block;
+	transition: 1s;
+}
+.cover {
+	display: none;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.coverShow {
+	display: block;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
 /*Media query*/
@@ -347,6 +463,44 @@ hr {
 	.showInfo {
 		display: none;
 	}
+	.leftCol {
+		margin-bottom: 40px;
+	}
+	.mainFlex {
+		flex-direction: column;
+	}
+	.rightCol {
+		font-size: 1.3em;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: center;
+		font-weight: lighter;
+		margin-top: 10px;
+		text-align: left;
+	}
+	.rightCol div {
+		margin-left: 0px;
+		padding-bottom: 20px;
+	}
+	.todayCard {
+		margin-bottom: 50px;
+	}
+	.dateTime {
+		font-size: 1.7em;
+	}
+	.forecast div {
+		margin: 10px;
+		margin-left: 0px;
+	}
+	.menuBtn {
+		position: relative;
+		padding: 0px 0px;
+		left: 0px;
+		top: 10px;
+		width: fit-content;
+		margin: 10px 0px;
+	}
 }
 
 @media screen and (min-width: 320px) {
@@ -357,5 +511,10 @@ hr {
 @media screen and (min-width: 1000px) {
 	html {
 		font-size: 14px;
+	}
+}
+@media (max-width: 1310px) {
+	.todayCard {
+		margin-top: 40px;
 	}
 }

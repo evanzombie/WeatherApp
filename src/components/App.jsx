@@ -8,6 +8,14 @@ const FourOhFour = () => (
 		<h1>404</h1> <h1>Oops... Page Not Found!</h1>
 	</div>
 );
+
+// const cities = {
+// 	newyork: "5128638",
+// 	london: "2643743",
+// 	berlin: "2950159",
+// 	beijing: "1816670",
+// 	mexicocity: "3530597"
+// };
 // new york:5128638
 // London:2643743
 // Berlin: 2950159

@@ -1,37 +1,38 @@
 import React from "react";
 
 const Today = props => (
-	<div className="testBK">
-		<div className="cityName">
-			{props.city}
-			{/*{props.city[0].toUpperCase()}
-			{props.city.slice(1)}*/}
+	<div className="todayCard">
+		<div className="flex" style={{ justifyContent: "space-between" }}>
+			<div>
+				<div className="cityName">{props.currentCity}</div>
+				<div className="dateTime">{props.dt}</div>
+			</div>
+			<div style={{ fontSize: "4em", textAlign: "right" }}> Today </div>
 		</div>
-		<div className="dateTime">10:24 AM</div>
 		<hr />
 		<div className="flex mainFlex">
 			<div className="leftCol">
-				<div className="mainTemp">{props.temp}</div>
+				<div className="mainTemp">{props.temp}&deg;F</div>
 				<div className="leftCol-2">
-					<div className="mainWeather">Sunny</div>
+					<div className="mainWeather">{props.weather}</div>
 					<div className="mainTempDiff">
-						<div>High 22°</div>
-						<div>Low 22°</div>
+						<div>{props.temp_max}&deg;</div>
+						<div>{props.temp_min}&deg;</div>
 					</div>
 				</div>
 			</div>
 
 			<div className="rightCol flex ">
-				<div className="description">description</div>
-				<div className="pressure">pressure: 1</div>
+				<div className="description">{props.description}</div>
+				<div className="pressure">Pressure: {props.pressure}</div>
 
-				<div className="humidity">humidity: 1</div>
+				<div className="humidity">Humidity: {props.humidity}</div>
 
-				<div className="speed">speed: 1</div>
+				<div className="speed">Wind: {props.wind}</div>
 
-				<div className="all">clouds: 1</div>
+				<div className="all">Clouds: {props.clouds}</div>
 
-				<div className="visibility">visibility: 1</div>
+				<div className="visibility">Visibility: {props.visibility}</div>
 			</div>
 		</div>
 	</div>
