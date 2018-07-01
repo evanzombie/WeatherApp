@@ -94,7 +94,10 @@ li {
 	cursor: pointer;
 }
 li:hover {
-	text-decoration: underline;
+	background-color: white;
+	color: black;
+	transition: 2s;
+	/*text-decoration: underline;*/
 }
 li:nth-child(n + 2) {
 }
