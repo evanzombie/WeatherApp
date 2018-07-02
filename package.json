@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "A weather app",
   "main": "index.js",
+  "homepage": "https://evanzombie.github.io/WeatherApp",
   "scripts": {
     "start": "webpack-dev-server --mode development --hot",
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "format":
       "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"src/components/*.{js,jsx}\""
   },
@@ -29,6 +32,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "gh-pages": "^1.2.0",
     "html-webpack-plugin": "^3.2.0",
     "prettier": "^1.13.7",
     "react-hot-loader": "^4.3.3",
